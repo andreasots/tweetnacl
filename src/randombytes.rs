@@ -50,7 +50,7 @@ pub fn rng() -> TaskOSRng {
 
 #[allow(dead_code)]
 #[no_mangle]
-unsafe extern "C" fn randombytes(buf: *mut libc::c_uchar, len: libc::c_ulonglong) {
+pub unsafe extern "C" fn randombytes(buf: *mut libc::c_uchar, len: libc::c_ulonglong) {
 	assert!(len < std::uint::MAX as u64);
 	std::slice::raw::mut_buf_as_slice(buf, len as uint, |buf| rng().fill_bytes(buf))
 }
