@@ -1,4 +1,3 @@
-target/libtweetnacl.a: src/tweetnacl.c
-	mkdir target
-	$(CC) $(CPPFLAGS) $(CFLAGS) src/tweetnacl.c -c -o target/tweetnacl.o
-	$(AR) rcs $@ target/tweetnacl.o 
+$(DEPS_DIR)/libtweetnacl.a: src/tweetnacl.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) src/tweetnacl.c -c -o $(DEPS_DIR)/tweetnacl.o
+	$(AR) rcs $@ $(DEPS_DIR)/tweetnacl.o 
