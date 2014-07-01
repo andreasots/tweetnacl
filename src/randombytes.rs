@@ -46,3 +46,7 @@ pub fn rng() -> TaskOSRng {
     }
 }
 
+extern "C" fn randombytes(buf: *mut c_uchar, len: c_ulonglong) {
+	assert!(len < std::uint::MAX);
+	mut_buf_as_slice(buf, len as uint, |buf| rng().fill_bytes(buf))
+}
