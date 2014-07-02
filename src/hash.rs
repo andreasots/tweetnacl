@@ -1,7 +1,7 @@
 pub mod sha512 {
     use libc::{c_int,c_uchar,c_ulonglong};
 
-    #[link(name="tweetnacl")]
+    #[link(name="tweetnacl", kind="static")]
     extern {
         fn crypto_hash_sha512_tweet(out: *mut c_uchar, m: *const c_uchar, n: c_ulonglong) -> c_int;
     }

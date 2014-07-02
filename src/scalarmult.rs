@@ -9,7 +9,7 @@ use std::fmt::{Show,Formatter,FormatError};
 use std::hash::Hash;
 use std::hash::Writer;
 
-#[link(name="tweetnacl")]
+#[link(name="tweetnacl", kind="static")]
 extern {
     fn crypto_scalarmult_curve25519_tweet(q: *mut c_uchar, n: *const c_uchar, p: *const c_uchar) -> c_int;
     fn crypto_scalarmult_curve25519_tweet_base(q: *mut c_uchar, n: *const c_uchar) -> c_int;

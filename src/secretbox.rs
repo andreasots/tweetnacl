@@ -9,7 +9,7 @@ pub static NONCEBYTES: uint = 24;
 pub static ZEROBYTES: uint = 32;
 pub static BOXZEROBYTES: uint = 16;
 
-#[link(name="tweetnacl")]
+#[link(name="tweetnacl", kind="static")]
 extern {
     fn crypto_secretbox_xsalsa20poly1305_tweet(c: *mut c_uchar, m: *const c_uchar, d: c_ulonglong, n: *const c_uchar, k: *const c_uchar) -> c_int;
     fn crypto_secretbox_xsalsa20poly1305_tweet_open(m: *mut c_uchar, c: *const c_uchar, d: c_ulonglong, n: *const c_uchar, k: *const c_uchar) -> c_int;
