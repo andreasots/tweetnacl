@@ -1,5 +1,3 @@
-use libc;
-use std;
 use std::rand::Rng;
 use std::rand::os::OsRng;
 use std::kinds::marker;
